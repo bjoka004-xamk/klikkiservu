@@ -10,19 +10,23 @@ module.exports = {
 
         if(juoksevaArpanumero % 500 == 0) {
             palautus = {
-                voitto : 250
+                voitto : 250,
+                seuraava : 10
             };
         } else if(juoksevaArpanumero % 100 == 0) {
             palautus = {
-                voitto : 40
+                voitto : 40,
+                seuraava : 10
             };
         } else if(juoksevaArpanumero % 10 == 0) {
             palautus = {
-                voitto : 5
+                voitto : 5,
+                seuraava : 10
             };
         } else {
             palautus = {
-                voitto : 0
+                voitto : 0,
+                seuraava : 10 - juoksevaArpanumero%10
             };
         }
 
