@@ -8,30 +8,22 @@ module.exports = {
 
         let palautus;
 
-        if(juoksevaArpanumero % 500 == 0) {
-            palautus = {
-                voitto : 250,
-                seuraava : 10
-            };
-        } else if(juoksevaArpanumero % 100 == 0) {
-            palautus = {
-                voitto : 40,
-                seuraava : 10
-            };
-        } else if(juoksevaArpanumero % 10 == 0) {
-            palautus = {
-                voitto : 5,
-                seuraava : 10
-            };
+        if(juoksevaArpanumero % 500 === 0) {
+            palautus = muodostaPalautus(250, 10)
+        } else if(juoksevaArpanumero % 100 === 0) {
+            palautus = muodostaPalautus(40, 10)
+        } else if(juoksevaArpanumero % 10 === 0) {
+            palautus = muodostaPalautus(5, 10)
         } else {
-            palautus = {
-                voitto : 0,
-                seuraava : 10 - juoksevaArpanumero%10
-            };
+            palautus = muodostaPalautus(0, 10 - juoksevaArpanumero%10)
         }
 
-        callback(palautus);
+        return palautus;
 
     }
 
+}
+
+muodostaPalautus = (voitto, seuraava) => {
+    return { voitto : voitto, seuraava : seuraava};
 }

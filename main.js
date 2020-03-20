@@ -15,11 +15,8 @@ server.use(cors.actual); //kytketään cors-asetukset/otsikot jokaiseen pyyntö�
 
 server.get("/app/osallistu", (req, res, next) => {
 
-    klikkivarasto.osallistu((tulos) => {
-
-        res.send(tulos);
-
-    });
+    let palautus = klikkivarasto.osallistu();
+    res.send(palautus);
 
 });
 
